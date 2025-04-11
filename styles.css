@@ -394,7 +394,7 @@
   }
   
   #skills .tech-skills{
-    font-size: 22px;
+    font-size: 25px;
     color: var(--accent-color);
     font-weight: 500;
     margin-bottom: 20px;
@@ -403,20 +403,17 @@
 
   #skills .pro-skills{
     margin-top: 30px;
-    font-size: 22px;
+    font-size: 25px;
     color: var(--accent-color);
     font-weight: 500;
     margin-bottom: 25px;
     display: block;
-  }
-
-/*..........................*/
-      
-      
+  } 
     
       .skill-header {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         margin-bottom: 15px;
       }
       
@@ -428,20 +425,30 @@
       
       .skill-percentage {
         font-weight: 800;
+        width: 50px;
+        /*text-align: right;
+        min-width:35px;*/
+        font-size: 16px;
       }
       
       .skill-bar {
-        height: 10px;
+        height: 8px;
         background-color: #161b22;
-        border-radius: 4px;
+        border-radius: 5px;
         overflow: hidden;
+        margin-bottom: 10px;
+        max-width: 750px;
+        padding-right: 5%;
       }
       
       .skill-progress {
         height: 100%;
+        width: 90%;
         background: linear-gradient(90deg, #58a6ff, #80bdff);
-        border-radius: 4px;
+        border-radius: 5px;
         transition: width 1.5s ease-in-out;
+        flex-grow: 1;
+        margin-right: 10px;
       }
       
       h3 {
