@@ -295,3 +295,16 @@ blogPosts.forEach(post => {
     });
   }
 });
+
+//Animation for professional skills section
+document.addEventListener('DOMContentLoaded', function() {
+  const skillBars = document.querySelectorAll('.skill-progress');
+  skillBars.forEach(bar => {
+    const finalWidth = bar.style.width;
+    bar.style.width = '0';
+    
+    setTimeout(() => {
+      bar.style.width = finalWidth;
+    }, 300);
+  });
+});
