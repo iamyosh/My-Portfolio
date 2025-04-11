@@ -1,0 +1,298 @@
+// Set the year in the footer dynamically
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Add typing animation effect to the home section heading
+function typeWriter(element, text, speed) {
+  let i = 0;
+  element.textContent = "";
+  
+  function type() {
+    if (i < text.length) {
+      element.textContent += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    }
+  }
+  
+  type();
+}
+
+// Run typing animation when page loads
+document.addEventListener("DOMContentLoaded", function() {
+  const heading = document.querySelector("#home h1");
+  const originalText = heading.textContent;
+  typeWriter(heading, originalText, 100);
+});
+
+// Smooth Scroll Navigation
+document.querySelectorAll('nav a').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    
+    // Close mobile menu if open
+    if (mobileMenu.classList.contains('show')) {
+      toggleMobileMenu();
+    }
+    
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+// Mobile Menu Toggle
+const menuIcon = document.getElementById("menu-icon");
+const mobileMenu = document.getElementById("nav-links");
+
+function toggleMobileMenu() {
+  menuIcon.classList.toggle("active");
+  mobileMenu.classList.toggle("show");
+}
+
+menuIcon.addEventListener("click", toggleMobileMenu);
+
+// Scroll to Top Button functionality
+const scrollToTopButton = document.getElementById("scroll-to-top");
+
+window.addEventListener("scroll", function() {
+  // Show/hide scroll to top button
+  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+    scrollToTopButton.style.display = "block";
+    scrollToTopButton.style.opacity = "1";
+  } else {
+    scrollToTopButton.style.opacity = "0";
+    setTimeout(() => {
+      if (document.body.scrollTop <= 200 && document.documentElement.scrollTop <= 200) {
+        scrollToTopButton.style.display = "none";
+      }
+    }, 300);
+  }
+  
+  // Add active class to nav links based on scroll position
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("nav a");
+  
+  let current = "";
+  
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (pageYOffset >= sectionTop - 150) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+    }
+  });
+});
+
+scrollToTopButton.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+});
+
+// Enhanced Project Modal
+function openProjectModal(project) {
+  const modalContent = {
+    project1: {
+      title: "Project One",
+      description: "This project showcases my ability to create responsive web applications with modern UI/UX principles.",
+      tech: ["HTML", "CSS", "JavaScript", "React"],
+      link: "#"
+    },
+    project2: {
+      title: "Project Two",
+      description: "An interactive dashboard that visualizes complex data in an intuitive way.",
+      tech: ["JavaScript", "D3.js", "Node.js", "MongoDB"],
+      link: "#"
+    }
+  };
+  
+  const projectData = modalContent[project];
+  const modal = document.getElementById("project-modal");
+  const projectDetails = document.getElementById("project-details");
+  
+  // Create content for the modal
+  let techStackHTML = '';
+  projectData.tech.forEach(tech => {
+    techStackHTML += `<span class="tech-badge">${tech}</span>`;
+  });
+  
+  projectDetails.innerHTML = `
+    <h3>${projectData.title}</h3>
+    <p>${projectData.description}</p>
+    <div class="tech-stack">
+      <h4>Technologies Used:</h4>
+      <div class="tech-badges">${techStackHTML}</div>
+    </div>
+    <a href="${projectData.link}" class="project-link">View Project</a>
+  `;
+  
+  // Show modal with animation
+  modal.style.display = "block";
+  setTimeout(() => {
+    modal.classList.add("active");
+  }, 10);
+}
+
+document.getElementById("close-modal").addEventListener("click", function () {
+  const modal = document.getElementById("project-modal");
+  modal.classList.remove("active");
+  setTimeout(() => {
+    modal.style.display = "none";
+  }, 300);
+});
+
+// Close modal when clicking outside
+window.addEventListener("click", function(event) {
+  const modal = document.getElementById("project-modal");
+  if (event.target === modal) {
+    modal.classList.remove("active");
+    setTimeout(() => {
+      modal.style.display = "none";
+    }, 300);
+  }
+});
+
+// Light/Dark Mode Toggle with enhanced transition and local storage
+const modeToggle = document.getElementById("mode-toggle");
+const root = document.documentElement;
+
+// Check for saved mode preference or respect OS preference
+function getPreferredColorScheme() {
+  // Check for saved user preference
+  const savedMode = localStorage.getItem("preferredMode");
+  if (savedMode) {
+    return savedMode;
+  }
+  
+  // Otherwise check for OS preference
+  return window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+}
+
+// Set initial mode
+function initializeMode() {
+  const preferredMode = getPreferredColorScheme();
+  
+  if (preferredMode === "light") {
+    document.body.classList.add("light-mode");
+    modeToggle.textContent = "🌞";
+  } else {
+    document.body.classList.remove("light-mode");
+    modeToggle.textContent = "🌙";
+  }
+}
+
+// Run on page load
+initializeMode();
+
+modeToggle.addEventListener("click", () => {
+  // Add transition class for smooth color changes
+  document.body.classList.add("color-transition");
+  
+  // Toggle mode
+  document.body.classList.toggle("light-mode");
+  const mode = document.body.classList.contains("light-mode") ? "light" : "dark";
+  
+  // Update button icon
+  modeToggle.textContent = mode === "light" ? "🌞" : "🌙";
+  
+  // Save preference
+  localStorage.setItem("preferredMode", mode);
+  
+  // Remove transition class after transition completes
+  setTimeout(() => {
+    document.body.classList.remove("color-transition");
+  }, 500);
+});
+
+// Simple form validation
+const contactForm = document.getElementById("contact-form");
+if (contactForm) {
+  contactForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+    
+    if (name === "" || email === "" || message === "") {
+      alert("Please fill in all fields");
+      return false;
+    }
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address");
+      return false;
+    }
+    
+    // Normally you would submit the form here
+    // For demo purposes:
+    alert("Thanks for your message! I'll get back to you soon.");
+    contactForm.reset();
+  });
+}
+
+// Add scroll animations
+const animateOnScroll = function() {
+  const elements = document.querySelectorAll(".projects-grid .project, .blog-post, #skills li, #services li");
+  
+  elements.forEach(element => {
+    const elementPosition = element.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.2;
+    
+    if (elementPosition < screenPosition) {
+      element.classList.add("animate");
+    }
+  });
+};
+
+window.addEventListener("scroll", animateOnScroll);
+window.addEventListener("load", animateOnScroll);
+
+// Add active status to skills 
+const skillItems = document.querySelectorAll("#skills li");
+skillItems.forEach(skill => {
+  skill.addEventListener("mouseover", function() {
+    skillItems.forEach(item => item.classList.remove("active-skill"));
+    this.classList.add("active-skill");
+  });
+});
+
+// Blog post expand/collapse functionality
+const blogPosts = document.querySelectorAll(".blog-post");
+blogPosts.forEach(post => {
+  const readMoreLink = post.querySelector("a");
+  const excerpt = post.querySelector(".excerpt");
+  
+  if (readMoreLink && excerpt) {
+    const fullContent = excerpt.textContent;
+    const shortContent = fullContent.substring(0, 100) + "...";
+    
+    // Initially show shortened content
+    excerpt.textContent = shortContent;
+    let expanded = false;
+    
+    readMoreLink.addEventListener("click", function(e) {
+      e.preventDefault();
+      
+      if (!expanded) {
+        excerpt.textContent = fullContent;
+        readMoreLink.textContent = "Read Less";
+        expanded = true;
+      } else {
+        excerpt.textContent = shortContent;
+        readMoreLink.textContent = "Read More";
+        expanded = false;
+      }
+    });
+  }
+});

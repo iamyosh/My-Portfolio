@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body class="dark-mode">
+
+    <!-- Mobile Navigation -->
+    <nav>
+      <div class="menu-icon" id="menu-icon">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <!-- Light/Dark Mode Toggle -->
+      <button id="mode-toggle" class="mode-toggle">🌙</button>
+    </nav>
+
+    <div id="root">
+      <!-- Home Section -->
+      <section id="home">
+        <div class="home-content">
+            <div class="home-text">
+        <h1>Hi, I'm Yoshadhi Edirisinghe</h1>
+        <p>A passionate university student building modern web apps</p>
+        <a href="#projects" class="cta-button">View Projects</a>
+            </div>
+            <div class="profile-photo">
+                <img src="my profile.jpg" alt="My profile picture"
+        </div>
+        </div>
+    </section>
+
+      <!-- About Me -->
+      <section id="about">
+        <h2>About Me</h2>
+        <p>
+          I'm an Information Systems university student with a passion for frontend development and UI/UX design. I love creating websites that are both beautiful and functional using tools like HTML, CSS, and JavaScript.
+          <br><br>I look forward to contributing to impactful projects and continuing to master and polish my skills.
+        </p>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li><span class="skill-name">HTML</span></li>
+          <li><span class="skill-name">CSS</span></li>
+          <li><span class="skill-name">JavaScript</span></li>
+          <li><span class="skill-name">React js</span></li>
+          <li><span class="skill-name">Responsive Design</span></li>
+        </ul>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <div class="project" onclick="openProjectModal('project1')">
+            <h3>Simon Game Challenge</h3>
+            <p>A simple project created with HTML, CSS and Javascript.</p>
+          </div>
+          <div class="project" onclick="openProjectModal('project2')">
+            <h3>Project Two</h3>
+            <p>Short description of the project.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog -->
+      <section id="blog">
+        <h2>Blog</h2>
+        <article class="blog-post">
+          <h3>Dev Diaries</h3>
+          <p class="date">January 1, 2025</p>
+          <p class="excerpt">To be started yet...</p>
+          <a href="#post1">Read More</a>
+        </article>
+        <article class="blog-post">
+          <h3>Thoughts & Writings</h3>
+          <p class="date">February 15, 2025</p>
+          <p class="excerpt">“I occasionally write about what I learn, build, or explore in the world of tech and beyond.”
+            ...</p>
+          <a href="#post2">Read More</a>
+        </article>
+      </section>
+
+      <!-- Testimonial -->
+      <section id="testimonial">
+        <h2>📚 What I'm Learning Now</h2>
+        <div class="testimonial">
+          <p>I'm currently diving into Software Quality Assurance (SQA) — exploring how to ensure software is reliable, functional, and meets high standards. I'm learning about:
+            <ol>
+                <li>Testing strategies (manual and automated)</li>
+                <li>Bug tracking tools</li>
+                <li>Writing test cases and test plans</li>
+                <li>Quality control techniques</li>
+          </p>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services">
+        <h2>Services</h2>
+        <ul>
+          <li>Web Development</li>
+          <li>UI/UX Design</li>
+          <li>Freelance Projects</li>
+        </ul>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <h2>Get in Touch</h2>
+        <form id="contact-form">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <textarea id="message" placeholder="Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+
+      <!-- Modal for Projects -->
+      <div id="project-modal" class="modal">
+        <div class="modal-content">
+          <span id="close-modal" class="close">&times;</span>
+          <h3>Project Details</h3>
+          <div id="project-details"></div>
+        </div>
+      </div>
+
+      <!-- Scroll to Top Button -->
+      <button id="scroll-to-top">
+        <span class="arrow-up"></span>
+      </button>
+
+      <!-- Footer -->
+      <footer>
+        <div class="socials">
+          <a href="#" aria-label="GitHub">GitHub</a>
+          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+          <a href="mailto:your@email.com" aria-label="Email">Email</a>
+        </div>
+        <p>© <span id="year"></span> Yoshadhi Edirisinghe. All rights reserved.</p>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
