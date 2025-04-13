@@ -10,6 +10,17 @@ function typeWriter(element, text, speed) {
       element.textContent += text.charAt(i);
       i++;
       setTimeout(type, speed);
+    } else{
+      setTimeout(erase, 1500);
+    }
+  }
+  function erase(){
+    if(element.textContent.length > 0){
+      element.textContent = element.textContent.slice(0, -1);
+      setTimeout(erase,speed/2);
+    }else{
+      i=0;
+      setTimeout(type,500);
     }
   }
   
