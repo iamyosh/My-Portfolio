@@ -141,7 +141,7 @@ function openProjectModal(project) {
       <h4>Technologies Used:</h4>
       <div class="tech-badges">${techStackHTML}</div>
     </div>
-    <a href="${projectData.link}" class="project-link">View Project</a>
+    <a href="${projectData.link}" class="project-link" target="_blank">View on Github</a>
   `;
   
   // Show modal with animation
