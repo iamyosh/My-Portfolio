@@ -111,10 +111,10 @@ scrollToTopButton.addEventListener("click", function () {
 function openProjectModal(project) {
   const modalContent = {
     project1: {
-      title: "Project One",
-      description: "This project showcases my ability to create a simple game with modern Javascript principles.",
+      title: "Interactive Simon Game",
+      description: "A web-based recreation of the classic memory skill game using HTML, CSS, and JavaScript. This project features the iconic colorful interface with sound patterns that players must memorize and repeat with increasing difficulty..",
       tech: ["HTML", " CSS", " JavaScript"],
-      link: "#"
+      link: "https://github.com/iamyosh/simon-game-challenge.git"
     },
     project2: {
       title: "Project Two",
