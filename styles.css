@@ -421,7 +421,7 @@
         font-weight: 700;
         font-size: 18px;
         color: #58a6ff;
-      }
+        }
       
       .skill-percentage {
         font-weight: 800;
@@ -598,24 +598,26 @@
   }
 
   #testimonial h2{
-    font-size: 35px;
+    font-size: 30px;
   }
 
   #testimonial p{
-    font-size: 22px;
+    font-size: 20px;
+    margin-bottom: 30px;
   }
   
   #testimonial ol{
     text-align: left;
-    font-size: 18px;
+    font-size: 17px;
+    margin-top: 30px;
   }
   
   #testimonial::before {
     content: '"';
     position: absolute;
     top: -20px;
-    left: 30px;
-    font-size: 150px;
+    left: 25px;
+    font-size: 100px;
     opacity: 0.1;
     color: var(--accent-color);
     font-family: 'Space Grotesk', sans-serif;
