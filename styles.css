@@ -880,7 +880,8 @@
   .socials a {
     color: var(--text-secondary-light);
     text-decoration: none;
-    font-size: 1rem;
+    margin: 0 15px;
+    font-size: 24px;
     transition: all var(--transition-speed) ease;
     position: relative;
   }
