@@ -86,9 +86,9 @@
     top: 0;
     left: 0;
     right: 0;
-    background-color: rgba(22, 27, 34, 0.95);
+    background-color: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
-    padding: 10px 25px;
+    padding: 10px 15px;
     padding-right: 5px;
     z-index: 100;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -106,7 +106,7 @@
   nav .logo{
     display: flex;
     align-items: center;
-    padding-left: 15px;
+    padding-left: 18px;
   }
 
   nav .logo a{
@@ -116,14 +116,14 @@
   }
 
   .logo-port{
-    font-size: 1.8rem;
+    font-size: 2.7rem;
     font-weight: 700;
     font-family: 'Space Grotesk', sans-serif;
     color: var(--accent-color);
   }
 
   .logo-folio{
-    font-size: 1.4rem;
+    font-size: 1.7rem;
     font-weight: 500;
     color: var(--text-light);
     transition: all 0.3s ease;
@@ -174,8 +174,7 @@
   nav ul {
     list-style-type: none;
     display: flex;
-    gap: 3.0rem;
-    margin: 0;
+    gap: 5rem;
     padding: 0;
     padding-right: 20px;
   }
@@ -222,11 +221,12 @@
     background: transparent;
     border: none;
     color: var(--text-light);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     cursor: pointer;
     transition: transform var(--transition-speed) ease;
-    padding: 8px;
-    padding-top: 0px;
+    padding-bottom: 10px;
+    padding-top: 2px;
+    padding-right: 17px;
     border-radius: 50%;
     display: flex;
     align-items: center;
