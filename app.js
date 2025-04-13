@@ -112,8 +112,8 @@ function openProjectModal(project) {
   const modalContent = {
     project1: {
       title: "Project One",
-      description: "This project showcases my ability to create responsive web applications with modern UI/UX principles.",
-      tech: ["HTML", "CSS", "JavaScript", "React"],
+      description: "This project showcases my ability to create a simple game with modern Javascript principles.",
+      tech: ["HTML", " CSS", " JavaScript"],
       link: "#"
     },
     project2: {
