@@ -311,8 +311,8 @@
   }
 
   .profile-photo{
-    width: 580px;
-    height: 650px;
+    width: 500px;
+    height: 550px;
     border-radius: 30%;
     overflow: hidden;
     border: 3px solid var(--accent-color);
