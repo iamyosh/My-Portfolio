@@ -602,6 +602,10 @@
   }
   
   /* Blog Section */
+
+  #blog{
+    padding-top: 26px;
+  }
   .blog-post {
     margin-bottom: 40px;
     padding: 30px;
@@ -652,7 +656,7 @@
     position: relative;
   }
   
-  .blog-post a::after {
+   .blog-post a::after {
     content: '→';
     opacity: 0;
     margin-left: 5px;

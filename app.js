@@ -113,14 +113,14 @@ function openProjectModal(project) {
     project1: {
       title: "Interactive Simon Game",
       description: "A web-based recreation of the classic memory skill game using HTML, CSS, and JavaScript. This project features the iconic colorful interface with sound patterns that players must memorize and repeat with increasing difficulty..",
-      tech: ["HTML", " CSS", " JavaScript"],
+      tech: ["HTML , ", " CSS , ", " JavaScript"],
       link: "https://github.com/iamyosh/simon-game-challenge.git"
     },
     project2: {
-      title: "Project Two",
-      description: "An interactive dashboard that visualizes complex data in an intuitive way.",
-      tech: ["JavaScript", "D3.js", "Node.js", "MongoDB"],
-      link: "#"
+      title: "Enhanced Color Picker Application",
+      description: "This is a unique Color Picker Application created with React js which includes advanced functionalities like; Choosing a random color, seeing the Color History, creating a Gradient Color, saving the Favorite Colors, copying the HEX code etc...",
+      tech: ["JavaScript, ", "React js, ", "HTML, ", "CSS"],
+      link: "https://github.com/iamyosh/Enhanced-Color-Picker-Application"
     }
   };
   
@@ -277,35 +277,6 @@ skillItems.forEach(skill => {
   });
 });
 
-// Blog post expand/collapse functionality
-const blogPosts = document.querySelectorAll(".blog-post");
-blogPosts.forEach(post => {
-  const readMoreLink = post.querySelector("a");
-  const excerpt = post.querySelector(".excerpt");
-  
-  if (readMoreLink && excerpt) {
-    const fullContent = excerpt.textContent;
-    const shortContent = fullContent.substring(0, 100) + "...";
-    
-    // Initially show shortened content
-    excerpt.textContent = shortContent;
-    let expanded = false;
-    
-    readMoreLink.addEventListener("click", function(e) {
-      e.preventDefault();
-      
-      if (!expanded) {
-        excerpt.textContent = fullContent;
-        readMoreLink.textContent = "Read Less";
-        expanded = true;
-      } else {
-        excerpt.textContent = shortContent;
-        readMoreLink.textContent = "Read More";
-        expanded = false;
-      }
-    });
-  }
-});
 
 //Animation for professional skills section
 document.addEventListener('DOMContentLoaded', function() {
