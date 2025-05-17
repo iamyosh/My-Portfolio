@@ -1,6 +1,6 @@
 💼 Personal Portfolio Website
 
-Hi there! 👋 I'm Yoshadhi Edirisinghe, an enthusiastic university student passionate about modern web development and creative design. This is my personal portfolio website where I showcase my skills, projects, blog, and more.
+Hi there! I'm Yoshadhi Edirisinghe, an enthusiastic university student passionate about modern web development and creative design. This is my personal portfolio website where I showcase my skills, projects, blog, and more.
 
 🌐 Live Demo
 Check it out here 👉 [https://github.com/iamyosh/My-Portfolio.git]
