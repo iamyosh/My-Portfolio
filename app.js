@@ -171,50 +171,50 @@ window.addEventListener("click", function(event) {
 });
 
 // Light/Dark Mode Toggle with enhanced transition and local storage
-const modeToggle = document.getElementById("mode-toggle");
-const root = document.documentElement;
+// const modeToggle = document.getElementById("mode-toggle");
+// const root = document.documentElement;
 
 // Check for saved mode preference or respect OS preference
-function getPreferredColorScheme() {
-  // Check for saved user preference
-  const savedMode = localStorage.getItem("preferredMode");
-  if (savedMode) {
-    return savedMode;
-  }
+// function getPreferredColorScheme() {
+//   // Check for saved user preference
+//   const savedMode = localStorage.getItem("preferredMode");
+//   if (savedMode) {
+//     return savedMode;
+//   }
   
-  // Otherwise check for OS preference
-  return window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-}
+//   // Otherwise check for OS preference
+//   return window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+// }
 
 // Set initial mode
-function initializeMode() {
-  const preferredMode = getPreferredColorScheme();
+// function initializeMode() {
+//   const preferredMode = getPreferredColorScheme();
   
-  if (preferredMode === "light") {
-    document.body.classList.add("light-mode");
-    modeToggle.textContent = "🌞";
-  } else {
-    document.body.classList.remove("light-mode");
-    modeToggle.textContent = "🌙";
-  }
-}
+//   if (preferredMode === "light") {
+//     document.body.classList.add("light-mode");
+//     modeToggle.textContent = "🌞";
+//   } else {
+//     document.body.classList.remove("light-mode");
+//     modeToggle.textContent = "🌙";
+//   }
+// }
 
 // Run on page load
 initializeMode();
 
 modeToggle.addEventListener("click", () => {
   // Add transition class for smooth color changes
-  document.body.classList.add("color-transition");
+  // document.body.classList.add("color-transition");
   
   // Toggle mode
-  document.body.classList.toggle("light-mode");
-  const mode = document.body.classList.contains("light-mode") ? "light" : "dark";
+  // document.body.classList.toggle("light-mode");
+  // const mode = document.body.classList.contains("light-mode") ? "light" : "dark";
   
-  // Update button icon
-  modeToggle.textContent = mode === "light" ? "🌞" : "🌙";
+  // // Update button icon
+  // modeToggle.textContent = mode === "light" ? "🌞" : "🌙";
   
-  // Save preference
-  localStorage.setItem("preferredMode", mode);
+  // // Save preference
+  // localStorage.setItem("preferredMode", mode);
   
   // Remove transition class after transition completes
   setTimeout(() => {
