@@ -26,9 +26,9 @@
   }
 
   body .overlay{
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 0;
-  }
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
   
   h1, h2, h3 {
     font-family: 'Space Grotesk', sans-serif;
@@ -294,7 +294,7 @@
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
-    padding-top: 60px;
+    padding-top: 20px;
   }
 
   #home .home-content{
@@ -302,15 +302,16 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 60px;
-    /*width: 100%;*/
+    gap: 40px;
+    width: 100%;
+    padding: 0 5%;
   }
 
 
   #home .home-text{
     flex: 1;
     min-width: 30px;
-    max-width: 600px;
+    max-width: none;
   }
 
   #home .home-text p{
@@ -438,10 +439,10 @@
   
   /* About Section */
   #about {
-    background-color: rgba(22, 27, 34, 0.5);
-    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 80px;
     box-shadow: var(--card-shadow);
-    padding: 40px;
+    padding: 100px;
   }
   
   body.light-mode #about {
@@ -449,10 +450,17 @@
   }
   
   /* Skills Section */
+#skills{
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 80px;
+  padding: 100px;
+  margin-top: 5px;
+}
+
   #skills ul {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 60px;
     padding: 0;
     list-style: none;
   }
@@ -480,7 +488,7 @@
     font-size: 25px;
     color: var(--accent-color);
     font-weight: 500;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     display: block;
   }
 
@@ -565,13 +573,17 @@
   
   /* Projects Section */
   #projects{
-    padding-top: 8px;
+    padding-top: 2px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 80px;
+    padding: 100px;
+    margin-top: 5px;
   }
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 60px;
-    margin-top: 50px;
+    margin-top: 10px;
   }
   
   .project {
@@ -612,7 +624,11 @@
 
   #blog{
     padding-top: 26px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 80px;
+    padding: 100px;
   }
+
   .blog-post {
     margin-bottom: 40px;
     padding: 30px;
@@ -663,7 +679,7 @@
     position: relative;
   }
   
-   .blog-post a::after {
+  .blog-post a::after {
     content: '→';
     opacity: 0;
     margin-left: 5px;
@@ -677,10 +693,12 @@
   
   /* Testimonial Section */
   #testimonial {
-    background-color: var(--secondary-dark);
-    padding: 30px 3%;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 80px;
+    padding: 35px;
+    background-color: var(--secondary-dark);;
     text-align: center;
-    border-radius: 12px;
+    border-radius: 20px;
     position: relative;
     overflow: hidden;
   }
@@ -739,6 +757,9 @@
   
   /* Services Section */
   #services{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 80px;
+    padding: 100px;
     padding-bottom: 50px;
   }
 
@@ -789,6 +810,12 @@
   }
   
   /* Contact Section */
+  #contact{
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 80px;
+    padding: 100px;
+  }
+
   #contact-form {
     display: grid;
     gap: 20px;
@@ -1062,32 +1089,35 @@
 
   /* Hero Section Background Overlay */
 .hero-section {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  background-image: url('background.jpg');
-  background-size: cover;
-  background-position: center;
+  position: absolute;
+  width: 78%;
+  min-height: 10vh;
+  /* background-position: center; */
   display: flex;
-  align-items: center;
+  align-items:center;
   justify-content: flex-start;
-  padding: 100px 5%;
   z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 80px;
+  box-shadow: var(--card-shadow);
+  padding: 100px;
+  margin-top: 90px;
 }
 
 .hero-section::before {
   content: "";
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 9, 0, 0.6); /* Adjust opacity here */
-  z-index: 0;
+  left: 5;
+  width: 90%;
+  height: 90%;
+  padding-left: 5px;
+  z-index: 1;
+  align-items:center;
 }
 
 .hero-section > * {
-  position: relative;
+  position:relative;
   z-index: 1;
 }
 
