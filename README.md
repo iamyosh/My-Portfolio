@@ -8,13 +8,13 @@ Check it out here 👉 [https://github.com/iamyosh/My-Portfolio.git]
 
 📁 Project Structure
 
-├── index.html # Main HTML file
-├── styles.css # Custom CSS styles
-├── app.js # JavaScript for interactivity
-├── profile.png # Profile image
-├── background.jpg # Hero section background
-├── CV.pdf # Resume download
-└── README.md # This file
+- index.html -> Main HTML file
+- styles.css -> Custom CSS styles
+- app.js -> JavaScript for interactivity
+-  profile.png -> Profile image
+-  background.jpg -> Background image
+- CV.pdf -> View Resume
+- README.md -> This file
 
 
 ✨ Features
